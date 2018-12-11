@@ -21,7 +21,13 @@ if ( version_compare( PHP_VERSION, '5.3', '<' ) ) {
 	add_action( 'admin_notices', create_function( '', 
 	"echo '<div class=\"error\"><p>" . __( 'WSUWP Plugin Skeleton requires PHP 5.3 to function properly. Please upgrade PHP or deactivate the plugin.', 'wsuwp-plugin-skeleton' ) . "</p></div>';" ) );
 	// @codingStandardsIgnoreEnd
+
 	return;
+
 } else {
-	include_once __DIR__ . '/includes/wsuwp-plugin-spine-themes.php';
-}
+
+	include_once __DIR__ . '/wsuwp-plugin-spine-themes.php';
+
+	$wsuwp_plugin_spine_templates = WSUWP\Plugin_Spine_Themes\WSUWP_Plugin_Spine_Themes::get_instance();
+
+} // End if
