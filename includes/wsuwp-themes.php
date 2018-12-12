@@ -20,8 +20,15 @@ class WSUWP_Themes {
 
 			if ( array_key_exists( 'bookmark', $theme_styles ) ) {
 
-				$theme_styles['bookmark'] = 'Bookmark (Deprecated)';
+				if ( is_super_admin() ) {
 
+					$theme_styles['bookmark'] = 'Bookmark (Deprecated)';
+
+				} else {
+
+					unset( $theme_styles['bookmark'] );
+
+				} // End if
 			} // End if
 
 			$new_themes = array(
