@@ -60,6 +60,8 @@ class WSUWP_Plugin_Spine_Themes {
 
 		include_once __DIR__ . '/includes/wsuwp-scripts.php';
 
+		include_once __DIR__ . '/includes/wsuwp-metaboxes.php';
+
 	} // End init_plugin
 
 	/**
