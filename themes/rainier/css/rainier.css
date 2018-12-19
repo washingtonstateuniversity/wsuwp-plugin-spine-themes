@@ -12,10 +12,6 @@ body.home:not(.has-background-image) #jacket, #jacket {
 	border-right: 1px solid #e5e5e5;
 }
 
-#spine .spine-navigation {
-	background-color: #fff;
-}
-
 .section-wrapper, .section-wrapper-has-background {
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -58,12 +54,28 @@ body.home:not(.has-background-image) #jacket, #jacket {
 	padding: 1rem 0;
 	max-width: 1188px;
 	height: auto;
-	z-index: 100;
 	position: relative;
+}
+
+.main-header:before {
+	content: "";
+	display: block;
+	background-color: #a60f2d;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	width: 9999rem;
+	z-index: 1;
 }
 
 sub.sub-header {
 	display: none;
+}
+
+.main-header .header-group {
+	position: relative;
+	z-index: 4;
 }
 
 .main-header .header-group:not(.unset) {
