@@ -8,6 +8,8 @@
 .hero-banner.has-image {
     background-color: #ca1237;
     background-size: cover;
+    margin-top: -100px;
+    background-position: center;
 }
 
 .hero-banner.has-image:before {
@@ -57,8 +59,12 @@
 
 .has-image .hero-banner-inner {
     display: flex;
-    min-height: 600px;
+    min-height: 500px;
     align-items: center;
+}
+
+.home .has-image .hero-banner-inner {
+    min-height: 600px;
 }
 
 .hero-banner-copy {
@@ -86,12 +92,13 @@
 }
 
 .hero-banner-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 800;
+    padding: 0;
 }
 
 .has-image .hero-banner-title {
-    letter-spacing: 0.1rem;
+    color: #fff;
 }
 
 .hero-banner-subtitle {
@@ -130,6 +137,11 @@
     list-style-type: none;
 }
 
+.hero-footer-widget-area .menu a:hover {
+    color: #d72216;
+    border-bottom: none;
+}
+
 .hero-footer-widget-area .menu > li {
     margin: 0 0 1.5rem 0;
     padding: 0 2rem 0 0;
@@ -142,7 +154,8 @@
     text-transform: uppercase;
     color: #fff;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .hero-footer-widget-area .menu > li > ul {
@@ -164,5 +177,38 @@
     color: rgba(255,255,255,0.5);
     text-decoration: none;
     font-size: 0.8rem;
+}
+
+.hero-footer-contact {
+    color: #fff;
+}
+
+.hero-footer-contact ul {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: .75rem;
+    font-weight: 400;
+    text-align: left;
+    padding: 2px 0;
+    margin: 40px 0 0;
+    display: block;
+    list-style-type: none;
+}
+
+.hero-footer-contact li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.hero-footer-contact a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+}
+
+.hero-footer-contact a:hover {
+    color: #d72216;
+    border-bottom: none;
 }
 

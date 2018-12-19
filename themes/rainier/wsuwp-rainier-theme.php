@@ -73,6 +73,16 @@ class WSUWP_Rainier_Theme {
 
 	public function add_footer( $context ) {
 
+		$spine_options = get_option( 'spine_options', array() );
+
+		$unit_name      = ( ! empty( $spine_options['contact_department'] ) ) ? $spine_options['contact_department'] : 'Washington State University';
+		$unit_url       = ( ! empty( $spine_options['contact_url'] ) ) ? $spine_options['contact_url'] : '';
+		$street_address = ( ! empty( $spine_options['contact_streetAddress'] ) ) ? $spine_options['contact_streetAddress'] : '';
+		$city_state     = ( ! empty( $spine_options['contact_addressLocality'] ) ) ? $spine_options['contact_addressLocality'] : '';
+		$postal_code    = ( ! empty( $spine_options['contact_postalCode'] ) ) ? $spine_options['contact_postalCode'] : '';
+		$phone          = ( ! empty( $spine_options['contact_telephone'] ) ) ? $spine_options['contact_telephone'] : '';
+		$email          = ( ! empty( $spine_options['contact_email'] ) ) ? $spine_options['contact_email'] : '';
+
 		include wsuwp_spine_themes_get_plugin_dir() . 'theme-parts/footers/hero-footer.php';
 	} // End add_footer
 
