@@ -99,9 +99,9 @@ function wsuwp_spine_get_post_image_data( $post_id, $size ) {
 
 /**
  * Register theme sidebars
- * 
+ *
  * @since 0.0.2
- * 
+ *
  * @param string $sidebar Sidebar ID
  */
 function wsuwp_spine_register_sidebar( $sidebar ) {
