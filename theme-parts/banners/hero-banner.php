@@ -1,4 +1,4 @@
-<header class="hero-banner unbound recto<?php if ( ! empty( $img_src ) ) : ?> has-image<?php endif; ?>" 
+<header class="hero-banner<?php if ( ! empty( $img_src ) ) : ?> unbound recto has-image<?php endif; ?>" 
 	<?php if ( ! empty( $img_src ) ) : ?>
 	style="background-image:url('<?php echo esc_url( $img_src ); ?>')" 
 	title="<?php echo esc_attr( $img_alt ); ?>"

@@ -94,7 +94,6 @@
 .hero-banner-title {
     font-size: 2rem;
     font-weight: 800;
-    padding: 0;
 }
 
 .has-image .hero-banner-title {
@@ -185,7 +184,7 @@
 
 .hero-footer-contact ul {
     border-top: 1px solid rgba(255,255,255,0.1);
-    color: #fff;
+    color: rgba(255,255,255,0.5);
     font-size: .75rem;
     font-weight: 400;
     text-align: left;
@@ -193,6 +192,13 @@
     margin: 40px 0 0;
     display: block;
     list-style-type: none;
+    position: relative;
+}
+
+.hero-footer-contact ul li:not(:last-child):after {
+    content: ",";
+    position: absolute;
+    right: 0;
 }
 
 .hero-footer-contact li {
@@ -200,6 +206,7 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
+    position: relative;
 }
 
 .hero-footer-contact a {

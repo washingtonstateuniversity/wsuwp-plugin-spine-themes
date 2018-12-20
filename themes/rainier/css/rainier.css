@@ -8,6 +8,19 @@ body.home:not(.has-background-image) #jacket, #jacket {
 	border-right: none;
 }
 
+.featured-image {
+    width: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    display: block;
+    z-index: 0;
+    margin: 2rem 2rem 0;
+	box-sizing: border-box;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+
 #spine #glue:before {
 	border-right: 1px solid #e5e5e5;
 }
@@ -45,7 +58,7 @@ body.home:not(.has-background-image) #jacket, #jacket {
 
 /* ----- Main Header ----- */
 .main-header {
-	left: 0;
+	left: -10px;
 }
 
 .main-header {
@@ -93,6 +106,7 @@ sub.sub-header {
 	color: #fff;
 	font-weight: 700;
 	letter-spacing: 2px;
+	text-decoration: none;
 }
 
 .main-header .header-group, .main-header .header-group:not(.x) {
@@ -116,14 +130,14 @@ body.blog .main-header {
 	border-bottom: none;
 }
 
-body.blog .main-header .sup-header:not(.unset) a, body.blog .sub-header span, body.blog .sup-header-default {
+/* body.blog .main-header .sup-header:not(.unset) a, body.blog .sub-header span, body.blog .sup-header-default {
 	color: #4c4c4c;
 }
 
 body.blog .sub-header span {
 	border-left: 1px solid #4c4c4c;
 	color: #4c4c4c;
-}
+} */
 
 /* ----- Hero ----- */
 .hero {
@@ -446,7 +460,7 @@ h5, h6 {
 }
 
 h1 {
-	font-size: 2.25em;
+	font-size: 2rem;
 	font-weight: 800;
 	margin: 0;
 	letter-spacing: 0;
@@ -729,7 +743,7 @@ blockquote.bar cite {
 	border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.column.two aside li a:after {
+.column.two .widget li > a:after {
 	background: #a31d36;
 	content: "";
 	height: calc(100% + 1px);
@@ -1487,6 +1501,7 @@ footer.article-footer, .article-header hgroup.source, .article-header .hgroup.so
 
 article footer {
 	margin-top: 2em;
+	margin-bottom: 2rem;
 	padding-top: 1em;
 	border-top: 1px solid rgba(0,0,0,0.1);
 }

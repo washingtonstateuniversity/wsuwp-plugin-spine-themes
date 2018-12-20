@@ -84,6 +84,7 @@ class WSUWP_Rainier_Theme {
 		$email          = ( ! empty( $spine_options['contact_email'] ) ) ? $spine_options['contact_email'] : '';
 
 		include wsuwp_spine_themes_get_plugin_dir() . 'theme-parts/footers/hero-footer.php';
+
 	} // End add_footer
 
 
