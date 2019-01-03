@@ -3,9 +3,17 @@ body.home:not(.has-background-image) #jacket, #jacket {
 	background: #ffffff;
 }
 
+#jacket {
+	position: relative;
+}
+
 #binder {
 	background-color: #fff;
 	border-right: none;
+}
+
+main {
+	min-height: 100vh !important; 
 }
 
 .featured-image {

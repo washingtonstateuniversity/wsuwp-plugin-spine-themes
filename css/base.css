@@ -117,6 +117,8 @@
     position: relative;
     padding: 2rem;
     box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
 }
 
 .hero-footer:before {
