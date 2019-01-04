@@ -112,8 +112,8 @@ function wsuwp_spine_register_sidebar( $sidebar ) {
 			$args = array(
 				'name'          => 'Footer Widgets',
 				'id'            => 'footer_widgets',
-				'before_widget' => '<div id="%1$s" class="widget widget %2$s">',
-				'after_widget'  => '</div>',
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</aside>',
 				'before_title'  => '<h2 class="widgettitle">',
 				'after_title'   => '</h2>',
 			);

@@ -21,3 +21,16 @@
 		</ul>
 	</div>
 </footer>
+<script>
+(function( $ ) {
+	$(window).on(
+		'resize',
+		function(){
+			var f_height = $('footer.hero-footer').outerHeight();
+			$('main').css('padding-bottom', f_height );
+		}
+	);
+
+	$(window).trigger( 'resize' );
+})( jQuery );
+</script>
