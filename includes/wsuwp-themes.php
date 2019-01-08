@@ -23,11 +23,13 @@ class WSUWP_Themes {
 	 */
 	public function add_spine_styles( $theme_styles ) {
 
+		$current_theme = wsuwp_spine_themes_get_theme();
+
 		if ( is_array( $theme_styles ) ) {
 
 			if ( array_key_exists( 'bookmark', $theme_styles ) ) {
 
-				if ( is_super_admin() ) {
+				if ( is_super_admin() || 'bookmark' === $current_theme ) {
 
 					$theme_styles['bookmark'] = 'Bookmark (Deprecated)';
 
@@ -40,9 +42,9 @@ class WSUWP_Themes {
 
 			$new_themes = array(
 				'rainier'  => 'Rainier',
-				'baker'    => 'Baker',
-				'Adams'    => 'Adams',
-				'olympus'  => 'Olympus',
+				//'baker'    => 'Baker',
+				//'Adams'    => 'Adams',
+				//'olympus'  => 'Olympus',
 			);
 
 			$theme_styles = array_merge( $theme_styles, $new_themes );
