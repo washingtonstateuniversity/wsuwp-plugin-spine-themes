@@ -11,7 +11,9 @@ class WSUWP_Themes {
 
 		add_filter( 'spine_theme_styles', array( $this, 'add_spine_styles' ) );
 
-		add_action( 'init', array( $this, 'do_theme' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'do_theme' ) );
+
+		add_action( 'init', array( $this, 'add_sidebars' ) );
 
 	} // End __construct
 
@@ -42,9 +44,6 @@ class WSUWP_Themes {
 
 			$new_themes = array(
 				'rainier'  => 'Rainier',
-				//'baker'    => 'Baker',
-				//'Adams'    => 'Adams',
-				//'olympus'  => 'Olympus',
 			);
 
 			$theme_styles = array_merge( $theme_styles, $new_themes );
@@ -72,6 +71,29 @@ class WSUWP_Themes {
 		} // End if
 
 	} // End do_theme
+
+
+	/**
+	 * Add Sidebars for theme
+	 *
+	 * @since 0.0.1
+	 */
+	public function add_sidebars() {
+
+		$theme = wsuwp_spine_themes_get_theme();
+
+		if ( ! empty( $theme ) ) {
+
+			switch ( $theme ) {
+
+				case 'rainier':
+					wsuwp_spine_register_sidebar( 'footer' );
+					break;
+
+			} // End switch
+		} // End if
+
+	} // End add_sidebars
 
 
 } // End WSUWP_Themes

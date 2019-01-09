@@ -22,8 +22,6 @@ class WSUWP_Rainier_Theme {
 
 		add_action( 'spine_theme_template_after_footer', array( $this, 'add_footer' ), 10, 1 );
 
-		wsuwp_spine_register_sidebar( 'footer' );
-
 	} // End __construct
 
 
