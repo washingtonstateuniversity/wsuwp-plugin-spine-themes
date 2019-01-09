@@ -31,10 +31,13 @@ class WSUWP_Rainier_Theme {
 
 		$apply_to = array( 'page.php', 'single.php' );
 
-		if ( in_array( $context, $apply_to, true ) && 'parts/featured-images' === $slug ) {
+		$post_type = get_post_type();
 
-			$slug = false;
+		if ( 'parts/featured-images' === $slug ) {
 
+			if ( in_array( $context, $apply_to, true ) || 'page' === $post_type ) {
+				$slug = false;
+			} // End if
 		} // End if
 
 		return $slug;
@@ -44,18 +47,31 @@ class WSUWP_Rainier_Theme {
 
 	public function add_banner( $context ) {
 
-		if ( 'page.php' === $context ) {
+		$post_type = get_post_type();
+
+		if ( 'page.php' === $context || 'page' === $post_type ) {
 
 			$page_settings = wsuwp_spine_get_page_settings( get_the_ID() );
 
 			$banner_image = wsuwp_spine_get_post_image_data( get_the_ID(), 'full' );
 
-			$title    = ( ! empty( $page_settings['title'] ) ) ? $page_settings['title'] : get_the_title();
-			$subtitle = ( ! empty( $page_settings['subtitle'] ) ) ? $page_settings['subtitle'] : '';
-			$img_src  = ( ! empty( $banner_image['src'] ) ) ? $banner_image['src'] : '';
-			$img_alt  = ( ! empty( $banner_image['alt'] ) ) ? $banner_image['alt'] : '';
+			$title     = ( ! empty( $page_settings['title'] ) ) ? $page_settings['title'] : get_the_title();
+			$subtitle  = ( ! empty( $page_settings['subtitle'] ) ) ? $page_settings['subtitle'] : '';
+			$img_src   = ( ! empty( $banner_image['src'] ) ) ? $banner_image['src'] : '';
+			$img_alt   = ( ! empty( $banner_image['alt'] ) ) ? $banner_image['alt'] : '';
+			$post_id   = get_the_ID();
 
-			include wsuwp_spine_themes_get_plugin_dir() . 'theme-parts/banners/hero-banner.php';
+			global $post;
+
+			$post_content = ( isset( $post->post_content ) ) ? $post->post_content : '';
+			$has_h1 = ( strpos( $post_content, 'h1-header' ) !== false ) ? true : false;
+			$title_tag = ( $has_h1 ) ? 'div' : 'h1';
+
+			if ( ! $has_h1 || ( $has_h1 && ! empty( $img_src ) ) ) {
+
+				include wsuwp_spine_themes_get_plugin_dir() . 'theme-parts/banners/hero-banner.php';
+
+			} // End if
 
 			add_filter(
 				'wsuwp_spine_themes_show_title',
