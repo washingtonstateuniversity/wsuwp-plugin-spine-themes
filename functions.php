@@ -35,9 +35,13 @@ function wsuwp_spine_themes_get_plugin_dir() {
  */
 function wsuwp_spine_themes_get_theme() {
 
+	$blog_id = get_current_blog_id();
+
+	$default_style = ( 2371 < $blog_id ) ? 'rainier' : '';
+
 	$spine_options = get_option( 'spine_options', array() );
 
-	$theme_type = ( is_array( $spine_options ) && ! empty( $spine_options['theme_style'] ) ) ? $spine_options['theme_style'] : '';
+	$theme_type = ( is_array( $spine_options ) && ! empty( $spine_options['theme_style'] ) ) ? $spine_options['theme_style'] : $default_style;
 
 	return $theme_type;
 
