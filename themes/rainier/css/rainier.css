@@ -1,3 +1,271 @@
+/* ----- Copied from base.css ---- */
+/* -- hero-banner -- */ 
+.hero-banner {
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-banner.has-image {
+    background-color: #ca1237;
+    background-size: cover;
+    margin-top: -100px;
+    background-position: center;
+}
+
+.hero-banner.has-image:before {
+    content: "";
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background-image: url(https://s3.wp.wsu.edu/uploads/sites/2334/2018/10/bg-dots.png);
+    background-position: top left;
+    background-repeat: repeat;
+}
+
+.hero-banner.has-image:after {
+    content: "";
+    display: block;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background: linear-gradient(135deg,rgba(166,15,45,1) 0%,rgba(255,255,255,0) 95%);
+    background: linear-gradient(to right,rgba(166,15,45,1) 0%,rgba(125,185,232,0) 100%);
+}
+
+.hero-banner.has-image:after {
+    content: "";
+    display: block;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    background: linear-gradient(135deg,rgba(166,15,45,1) 0%,rgba(255,255,255,0) 95%);
+    background: linear-gradient(to right,rgba(166,15,45,1) 0%,rgba(125,185,232,0) 100%);
+}
+
+.hero-banner-inner {
+    z-index: 3;
+    position: relative;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.has-image .hero-banner-inner {
+    display: flex;
+    min-height: 500px;
+    align-items: center;
+}
+
+.home .has-image .hero-banner-inner {
+    min-height: 600px;
+}
+
+.hero-banner-copy {
+    text-transform: uppercase;
+    position: relative;
+    margin: 3rem 0 1rem 0;
+    color: #4c4c4c;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.has-image .hero-banner-copy {
+    color: #fff;
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.hero-banner-copy:after {
+    content: "";
+    width: 60px;
+    height: 10px;
+    background: #ffffff;
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+
+.h1-header h1,
+.hero-banner-title {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.h1-header h1 {
+    text-transform: uppercase;
+    position: relative;
+    color: #4c4c4c;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.has-image .hero-banner-title {
+    color: #fff;
+}
+
+.hero-banner-subtitle {
+    font-size: 0.8rem;
+    letter-spacing: 0.25rem;
+}
+
+/* -------------------------------------------
+-- Footers --
+--------------------------------------------*/
+
+/* -- hero-footer -- */
+.hero-footer {
+    margin-top: 3rem;
+    color: #ffffff;
+    background: #333333;
+    position: relative;
+    padding: 2rem;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.hero-footer:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 9999rem;
+    left: 100%;
+    background: #333333;
+}
+.hero-footer p,
+.hero-footer a {
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6rem;
+}
+.hero-footer a:hover {
+    color: #d72216;
+}
+
+.hero-footer .widgettitle {
+    color: #fff;
+    font-size: 1.4rem;
+}
+
+.hero-footer-widget-area {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hero-footer .widget {
+    flex-basis: 0;
+    flex-grow: 1;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    box-sizing: border-box;
+}
+
+.hero-footer .widget.widget_nav_menu {
+    flex-basis: 100%;
+    margin-bottom: 1rem;
+}
+
+.hero-footer-widget-area .menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+}
+
+.hero-footer-widget-area .menu a:hover {
+    color: #d72216;
+    border-bottom: none;
+}
+
+.hero-footer-widget-area .menu > li {
+    margin: 0 0 1.5rem 0;
+    padding: 0 2rem 0 0;
+    box-sizing: border-box;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.hero-footer-widget-area .menu > li > a {
+    display: block;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.hero-footer-widget-area .menu > li > ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.hero-footer-widget-area .menu > li > ul li {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.hero-footer-widget-area .menu > li > ul li a {
+    display: block;
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.hero-footer-contact {
+    color: #fff;
+}
+
+.hero-footer-contact ul {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.5);
+    font-size: .75rem;
+    font-weight: 400;
+    text-align: left;
+    padding: 2px 0;
+    margin: 40px 0 0;
+    display: block;
+    list-style-type: none;
+    position: relative;
+}
+
+.hero-footer-contact ul li:not(:last-child):after {
+    content: ",";
+    position: absolute;
+    right: 0;
+}
+
+.hero-footer-contact li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    position: relative;
+}
+
+.hero-footer-contact a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+}
+
+.hero-footer-contact a:hover {
+    color: #d72216;
+    border-bottom: none;
+}
+
+
 /* ----- General ----- */
 body.home:not(.has-background-image) #jacket, #jacket {
 	background: #ffffff;

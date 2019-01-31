@@ -6,8 +6,9 @@
 >
 	<div class="hero-banner-inner">
 		<hgroup class="hero-banner-copy">
-			<?php if ( ! empty( $subtitle ) ) : ?><div class="hero-banner-subtitle"><?php echo esc_html( $subtitle ); ?></div><?php endif; ?>
+			<?php if ( ! empty( $subtitle ) && ! empty( $subtitle_before ) ) : ?><div class="hero-banner-subtitle"><?php echo esc_html( $subtitle ); ?></div><?php endif; ?>
 			<?php if ( ! empty( $title ) ) : ?><<?php echo esc_html( $title_tag ); ?> class="hero-banner-title"><?php echo esc_html( $title ); ?></<?php echo esc_html( $title_tag ); ?>><?php endif; ?>
+			<?php if ( ! empty( $subtitle ) && empty( $subtitle_before ) ) : ?><div class="hero-banner-subtitle"><?php echo esc_html( $subtitle ); ?></div><?php endif; ?>
 		</hgroup>
 	<div class="hero-banner-inner">
 </header>
