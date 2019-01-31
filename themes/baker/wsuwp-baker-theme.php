@@ -6,11 +6,11 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Add Rainier theme actions and filters.
+ * Add Baker theme actions and filters.
  *
  * @since 0.0.2
  */
-class WSUWP_Rainier_Theme {
+class WSUWP_Baker_Theme {
 
 	public function __construct() {
 
@@ -19,8 +19,6 @@ class WSUWP_Rainier_Theme {
 		add_filter( 'wsuwp_spine_get_template_part', array( $this, 'remove_template_featured_image' ), 10, 3 );
 
 		add_action( 'spine_theme_template_after_headers', array( $this, 'add_banner' ), 10, 1 );
-
-		add_action( 'spine_theme_template_after_footer', array( $this, 'add_footer' ), 10, 1 );
 
 	} // End __construct
 
@@ -51,14 +49,11 @@ class WSUWP_Rainier_Theme {
 
 			$page_settings = wsuwp_spine_get_page_settings( get_the_ID() );
 
-			$banner_image = wsuwp_spine_get_post_image_data( get_the_ID(), 'full' );
-
-			$title           = ( ! empty( $page_settings['title'] ) ) ? $page_settings['title'] : get_the_title();
-			$subtitle        = ( ! empty( $page_settings['subtitle'] ) ) ? $page_settings['subtitle'] : '';
-			$img_src         = ( ! empty( $banner_image['src'] ) ) ? $banner_image['src'] : '';
-			$img_alt         = ( ! empty( $banner_image['alt'] ) ) ? $banner_image['alt'] : '';
-			$subtitle_before = true;
-			$post_id         = get_the_ID();
+			$title     = ( ! empty( $page_settings['title'] ) ) ? $page_settings['title'] : get_the_title();
+			$subtitle  = ( ! empty( $page_settings['subtitle'] ) ) ? $page_settings['subtitle'] : '';
+			$img_src   = false;
+			$img_alt   = false;
+			$post_id   = get_the_ID();
 
 			global $post;
 
@@ -88,17 +83,7 @@ class WSUWP_Rainier_Theme {
 
 	public function add_footer( $context ) {
 
-		$spine_options = get_option( 'spine_options', array() );
-
-		$unit_name      = ( ! empty( $spine_options['contact_department'] ) ) ? $spine_options['contact_department'] : 'Washington State University';
-		$unit_url       = ( ! empty( $spine_options['contact_url'] ) ) ? $spine_options['contact_url'] : '';
-		$street_address = ( ! empty( $spine_options['contact_streetAddress'] ) ) ? $spine_options['contact_streetAddress'] : '';
-		$city_state     = ( ! empty( $spine_options['contact_addressLocality'] ) ) ? $spine_options['contact_addressLocality'] : '';
-		$postal_code    = ( ! empty( $spine_options['contact_postalCode'] ) ) ? $spine_options['contact_postalCode'] : '';
-		$phone          = ( ! empty( $spine_options['contact_telephone'] ) ) ? $spine_options['contact_telephone'] : '';
-		$email          = ( ! empty( $spine_options['contact_email'] ) ) ? $spine_options['contact_email'] : '';
-
-		include wsuwp_spine_themes_get_plugin_dir() . 'theme-parts/footers/hero-footer.php';
+		include wsuwp_spine_themes_get_plugin_dir() . 'theme-parts/footers/basic-footer.php';
 
 	} // End add_footer
 
@@ -111,8 +96,8 @@ class WSUWP_Rainier_Theme {
 	public function add_public_scripts() {
 
 		wp_enqueue_style(
-			'spine-theme-rainier-css',
-			wsuwp_spine_themes_get_plugin_url() . 'themes/rainier/css/rainier.css',
+			'spine-theme-baker-css',
+			wsuwp_spine_themes_get_plugin_url() . 'themes/baker/css/baker.css',
 			array(),
 			WSUWP_Plugin_Spine_Themes::$version
 		);
@@ -122,4 +107,4 @@ class WSUWP_Rainier_Theme {
 
 } // End WSUWP_Scripts
 
-$wsuwp_rainier_theme = new WSUWP_Rainier_Theme();
+$wsuwp_baker_theme = new WSUWP_Baker_Theme();

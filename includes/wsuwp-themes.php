@@ -37,6 +37,7 @@ class WSUWP_Themes {
 
 			$new_themes = array(
 				'rainier'  => 'Rainier',
+				'baker'    => 'Baker',
 			);
 
 			$theme_styles = array_merge( $theme_styles, $new_themes );
@@ -59,6 +60,9 @@ class WSUWP_Themes {
 				case 'rainier':
 					include_once wsuwp_spine_themes_get_plugin_dir() . '/themes/rainier/wsuwp-rainier-theme.php';
 					break;
+				case 'baker':
+					include_once wsuwp_spine_themes_get_plugin_dir() . '/themes/baker/wsuwp-baker-theme.php';
+					break;
 
 			} // End switch
 		} // End if
@@ -80,6 +84,7 @@ class WSUWP_Themes {
 			switch ( $theme ) {
 
 				case 'rainier':
+				case 'baker':
 					wsuwp_spine_register_sidebar( 'footer' );
 					break;
 
