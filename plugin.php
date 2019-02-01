@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WSUWP Plugin Spine Themes
-Version: 1.1.0
+Version: 1.1.1
 Description: Plugin to add additional Spine themes.
 Author: washingtonstateuniversity, Danial Bleile
 Author URI: https://web.wsu.edu/
