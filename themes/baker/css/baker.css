@@ -645,6 +645,7 @@ main .bottom-divider {
 main {
 	color: #191919;
 	font: 400 18px/28px "Source Sans Pro", sans-serif;
+	position: relative;
 }
 
 main a {
@@ -1441,4 +1442,149 @@ label, option, select {
 
 label.gfield_label.gfield_label_before_complex, label.gfield_label {
 	font-size: 16px !important;
+}
+/* -------------------------------------------
+-- Footers --
+--------------------------------------------*/
+
+/* -- hero-footer -- */
+.hero-footer {
+    margin-top: 3rem;
+    color: rgb(25, 25, 25);
+    background: #fff;
+    position: relative;
+    padding: 2rem;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+	width: 100%;
+	border-top: 1.25rem solid rgb(242, 242, 242);
+}
+
+.hero-footer p,
+.hero-footer a {
+    color: rgba(25,25,25,0.7);
+	line-height: 1.6rem;
+	border-bottom: none;
+	font-weight: normal;
+	font-size: 0.9rem;
+}
+.hero-footer a:hover {
+    color: #d72216;
+}
+
+.hero-footer .widgettitle {
+    color: rgb(25, 25, 25);
+    font-size: 1.4rem;
+}
+
+.hero-footer-widget-area {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hero-footer .widget {
+    flex-basis: 0;
+    flex-grow: 1;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    box-sizing: border-box;
+}
+
+.hero-footer .widget.widget_nav_menu {
+    flex-basis: 100%;
+    margin-bottom: 1rem;
+}
+
+.hero-footer-widget-area .menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+}
+
+.hero-footer-widget-area .menu a:hover {
+    color: #d72216;
+    border-bottom: none;
+}
+
+.hero-footer-widget-area .menu > li {
+    margin: 0 0 1.5rem 0;
+    padding: 0 2rem 0 0;
+    box-sizing: border-box;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.hero-footer-widget-area .menu > li > a {
+    display: block;
+    text-transform: uppercase;
+    color: rgb(25, 25, 25);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.hero-footer-widget-area .menu > li > ul {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.hero-footer-widget-area .menu > li > ul li {
+    display: block;
+    margin: 0;
+    padding: 0;
+	list-style-type: none;
+}
+
+.hero-footer-widget-area .menu > li > ul li a {
+    display: block;
+    color: rgba(25,25,25,0.7);
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.hero-footer-contact {
+    /*color: rgba(255,255,255,0.5)*/
+}
+
+.hero-footer-contact ul {
+    border-top: 1px solid rgba(0,0,0,0.1);
+    /*color: rgba(255,255,255,0.5);*/
+    font-size: .75rem;
+    font-weight: 400;
+    text-align: left;
+    padding: 2px 0;
+    margin: 40px 0 0;
+    display: block;
+    list-style-type: none;
+    position: relative;
+}
+
+.hero-footer-contact ul li:not(:last-child):after {
+    content: ",";
+    position: absolute;
+    right: 0;
+}
+
+.hero-footer-contact li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    position: relative;
+}
+
+.hero-footer-contact a {
+    color: rgba(25,25,25,0.7);
+    text-decoration: none;
+}
+
+.hero-footer-contact a:hover {
+    color: #d72216;
+    border-bottom: none;
 }

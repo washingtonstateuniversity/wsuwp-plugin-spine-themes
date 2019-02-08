@@ -20,6 +20,8 @@ class WSUWP_Baker_Theme {
 
 		add_action( 'spine_theme_template_after_headers', array( $this, 'add_banner' ), 10, 1 );
 
+		add_action( 'spine_theme_template_after_footer', array( $this, 'add_footer' ), 10, 1 );
+
 	} // End __construct
 
 
@@ -58,7 +60,7 @@ class WSUWP_Baker_Theme {
 			global $post;
 
 			$post_content = ( isset( $post->post_content ) ) ? $post->post_content : '';
-			$has_h1 = ( strpos( $post_content, 'h1-header' ) !== false ) ? true : false;
+			$has_h1 = ( strpos( $post_content, '<h1' ) !== false ) ? true : false;
 			$title_tag = ( $has_h1 ) ? 'div' : 'h1';
 
 			if ( ! $has_h1 || ( $has_h1 && ! empty( $img_src ) ) ) {
@@ -83,7 +85,17 @@ class WSUWP_Baker_Theme {
 
 	public function add_footer( $context ) {
 
-		include wsuwp_spine_themes_get_plugin_dir() . 'theme-parts/footers/basic-footer.php';
+		$spine_options = get_option( 'spine_options', array() );
+
+		$unit_name      = ( ! empty( $spine_options['contact_department'] ) ) ? $spine_options['contact_department'] : 'Washington State University';
+		$unit_url       = ( ! empty( $spine_options['contact_url'] ) ) ? $spine_options['contact_url'] : '';
+		$street_address = ( ! empty( $spine_options['contact_streetAddress'] ) ) ? $spine_options['contact_streetAddress'] : '';
+		$city_state     = ( ! empty( $spine_options['contact_addressLocality'] ) ) ? $spine_options['contact_addressLocality'] : '';
+		$postal_code    = ( ! empty( $spine_options['contact_postalCode'] ) ) ? $spine_options['contact_postalCode'] : '';
+		$phone          = ( ! empty( $spine_options['contact_telephone'] ) ) ? $spine_options['contact_telephone'] : '';
+		$email          = ( ! empty( $spine_options['contact_email'] ) ) ? $spine_options['contact_email'] : '';
+
+		include wsuwp_spine_themes_get_plugin_dir() . 'theme-parts/footers/hero-footer.php';
 
 	} // End add_footer
 
