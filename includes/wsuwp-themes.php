@@ -15,6 +15,8 @@ class WSUWP_Themes {
 
 		add_action( 'init', array( $this, 'add_sidebars' ) );
 
+		add_action( 'init', array( $this, 'register_menus' ) );
+
 	} // End __construct
 
 
@@ -38,6 +40,7 @@ class WSUWP_Themes {
 			$new_themes = array(
 				'rainier'  => 'Rainier',
 				'baker'    => 'Baker',
+				'adams'    => 'Adams (Beta)',
 			);
 
 			$theme_styles = array_merge( $theme_styles, $new_themes );
@@ -63,6 +66,9 @@ class WSUWP_Themes {
 				case 'baker':
 					include_once wsuwp_spine_themes_get_plugin_dir() . '/themes/baker/wsuwp-baker-theme.php';
 					break;
+				case 'adams':
+					include_once wsuwp_spine_themes_get_plugin_dir() . '/themes/adams/wsuwp-adams-theme.php';
+					break;
 
 			} // End switch
 		} // End if
@@ -83,6 +89,7 @@ class WSUWP_Themes {
 
 			switch ( $theme ) {
 
+				case 'adams':
 				case 'rainier':
 				case 'baker':
 					wsuwp_spine_register_sidebar( 'footer' );
@@ -92,6 +99,24 @@ class WSUWP_Themes {
 		} // End if
 
 	} // End add_sidebars
+
+
+	public function register_menus() {
+
+		$theme = wsuwp_spine_themes_get_theme();
+
+		if ( ! empty( $theme ) ) {
+
+			switch ( $theme ) {
+
+				case 'adams':
+					register_nav_menu( 'header_menu', 'Header Menu' );
+					break;
+
+			} // End switch
+		} // End if
+
+	} // End register_menus
 
 
 } // End WSUWP_Themes
