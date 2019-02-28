@@ -58,41 +58,6 @@ class WSUWP_Adams_Theme {
 			);
 		}
 
-		/*$post_type = get_post_type();
-
-		if ( 'page.php' === $context || 'page' === $post_type ) {
-
-			$page_settings = wsuwp_spine_get_page_settings( get_the_ID() );
-
-			$title     = ( ! empty( $page_settings['title'] ) ) ? $page_settings['title'] : get_the_title();
-			$subtitle  = ( ! empty( $page_settings['subtitle'] ) ) ? $page_settings['subtitle'] : '';
-			$img_src   = false;
-			$img_alt   = false;
-			$post_id   = get_the_ID();
-
-			global $post;
-
-			$post_content = ( isset( $post->post_content ) ) ? $post->post_content : '';
-			$has_h1 = ( strpos( $post_content, '<h1' ) !== false ) ? true : false;
-			$title_tag = ( $has_h1 ) ? 'div' : 'h1';
-
-			if ( ! $has_h1 || ( $has_h1 && ! empty( $img_src ) ) ) {
-
-				include wsuwp_spine_themes_get_plugin_dir() . 'theme-parts/banners/hero-banner.php';
-
-			} // End if
-
-			add_filter(
-				'wsuwp_spine_themes_show_title',
-				function( $show_title, $context ) {
-					return ( 'article.php' === $context ) ? false : $show_title;
-				},
-				10,
-				2
-			);
-
-		} // End if*/
-
 	} // End add_banner
 
 
