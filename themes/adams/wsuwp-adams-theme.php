@@ -54,8 +54,25 @@ class WSUWP_Adams_Theme {
 					'theme_location'  => $menu_location,
 					'depth'           => 1,
 					'menu_class'      => 'wsu-actions-submenu',
+					'container_class' => 'menu-utility-menu-container',
 				)
 			);
+		}
+
+		if ( is_front_page() && is_singular() ) {
+
+			$page_settings = wsuwp_spine_get_page_settings( get_the_ID() );
+
+			$title           = ( ! empty( $page_settings['title'] ) ) ? $page_settings['title'] : get_the_title();
+			$subtitle        = ( ! empty( $page_settings['subtitle'] ) ) ? $page_settings['subtitle'] : '';
+			$img_src         = ( ! empty( $banner_image['src'] ) ) ? $banner_image['src'] : '';
+			$img_alt         = ( ! empty( $banner_image['alt'] ) ) ? $banner_image['alt'] : '';
+			$title_tag       = 'h1';
+			$subtitle_before = false;
+			$post_id         = get_the_ID();
+
+			include wsuwp_spine_themes_get_plugin_dir() . 'theme-parts/banners/hero-banner.php';
+
 		}
 
 	} // End add_banner
