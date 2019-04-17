@@ -14,7 +14,7 @@ class WSUWP_Plugin_Spine_Themes {
 	 *
 	 * @var string $version Semantic Version
 	 */
-	public static $version = '1.2.1';
+	public static $version = '1.2.2';
 
 
 	/**
