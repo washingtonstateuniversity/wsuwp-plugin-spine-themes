@@ -81,6 +81,9 @@ hr {
 	background: #a60f2d;
 	height: 3px;
 	border-top: 1px solid #fff;
+	bottom: 0;
+	position: absolute;
+	width: 100%;
 }
 
 .main-header .header-group sup {
@@ -92,10 +95,8 @@ hr {
 	font-weight: 800;
 	font-size: 1rem;
 	letter-spacing: 0;
-	color: #a60f2d;
-	background: linear-gradient(to right,#a60f2d 0%,#c60c30 50%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	color: #fff;
+	background: none;
 }
 
 .main-header span,
@@ -958,7 +959,6 @@ input[type=submit]:hover {
 .menu-utility-menu-container {
 	background: #a60f2d;
 	max-height: 60px;
-	border-top: 1px solid #fff;
 }
 
 .wsu-actions-submenu {
