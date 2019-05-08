@@ -49,7 +49,7 @@ main textarea {
 	color: #767676;
 	margin: 0;
 	min-height: 40px;
-	background: #fff;
+	background: rgba(0,0,0,0.01);
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -58,7 +58,7 @@ main textarea {
 }
 
 input, textarea, input[type=text], select {
-	background: rgba(0,0,0,0.01) !important;
+	background: rgba(0,0,0,0.01);
 }
 
 input:hover, textarea:hover, input[type=text]:hover, select:hover {
