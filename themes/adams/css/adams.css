@@ -1114,7 +1114,7 @@ li.wsuwp-content-syndicate-item {
 	}
 }
 
-@media screen and (max-width: 791px) {
+@media only screen and (max-width: 791px) {
 	.main-header {
 		height: auto;
 	}
