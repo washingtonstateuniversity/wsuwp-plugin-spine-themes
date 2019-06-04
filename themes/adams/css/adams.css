@@ -1063,7 +1063,7 @@ li.wsuwp-content-syndicate-item {
     display: block;
     content: ' ';
     width: 5%;
- 
+}
 
 /** Mobile **/
 @media only screen and (max-width: 530px) {
@@ -1139,7 +1139,7 @@ li.wsuwp-content-syndicate-item {
 	}
 	
 	.fluid .row.side-left .column.one.overlay,
-					.fluid .row.side-right .column.two.overlay {
+	.fluid .row.side-right .column.two.overlay {
 		margin: 1em;
 		width: calc(100% - 2em);
 	}
