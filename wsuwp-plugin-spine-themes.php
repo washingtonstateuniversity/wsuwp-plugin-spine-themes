@@ -54,15 +54,27 @@ class WSUWP_Plugin_Spine_Themes {
 	 *
 	 * @since 0.0.1
 	 */
-	private function init_plugin() {
+	public function init_plugin() {
 
-		include_once __DIR__ . '/includes/wsuwp-themes.php';
+		add_action(
+			'after_setup_theme',
+			function () {
 
-		include_once __DIR__ . '/includes/wsuwp-scripts.php';
+				if ( ! defined( 'ISWSUWEBDESIGNSYSTEM' ) ) {
 
-		include_once __DIR__ . '/includes/wsuwp-metaboxes.php';
+					include_once __DIR__ . '/includes/wsuwp-themes.php';
+
+					include_once __DIR__ . '/includes/wsuwp-scripts.php';
+
+					include_once __DIR__ . '/includes/wsuwp-metaboxes.php';
+
+				}
+
+			}
+		);
 
 	} // End init_plugin
+
 
 	/**
 	 * Make constructor private, so nobody can call "new Class".
