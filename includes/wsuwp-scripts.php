@@ -14,7 +14,15 @@ class WSUWP_Scripts {
 
 	public function __construct() {
 
-		add_action( 'wp_enqueue_scripts', array( $this, 'add_public_scripts' ), 99 );
+		if ( ! empty( get_theme_mod( 'wsuwp_custom_css_priority', false ) ) ) {
+
+			add_action( 'spine_enqueue_styles', array( $this, 'add_public_scripts' ), 9 );
+
+		} else {
+
+			add_action( 'wp_enqueue_scripts', array( $this, 'add_public_scripts' ), 99 );
+
+		}
 
 	} // End __construct
 
