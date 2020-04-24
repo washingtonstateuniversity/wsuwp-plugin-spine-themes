@@ -17,7 +17,31 @@ class WSUWP_Themes {
 
 		add_action( 'init', array( $this, 'register_menus' ) );
 
+		add_action( 'customize_register', array( $this, 'add_css_order' ), 20 );
+
 	} // End __construct
+
+
+	public function add_css_order( $wp_customize ) {
+
+		$wp_customize->add_setting(
+			'wsuwp_custom_css_priority',
+			array(
+				'default'        => false,
+			)
+		);
+
+		$wp_customize->add_control(
+			'wsuwp_custom_css_priority_control',
+			array(
+				'settings' => 'wsuwp_custom_css_priority',
+				'label'    => 'Fix Custom Stylesheet Order',
+				'section'  => 'section_spine_advanced_options',
+				'type'     => 'checkbox',
+			)
+		);
+
+	}
 
 
 	/**
