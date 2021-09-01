@@ -16,8 +16,8 @@
 				<?php if ( ! empty( $postal_code ) ) : ?><?php echo esc_html( $postal_code ); ?><?php endif; ?>
 				</li>
 			<?php endif; ?>
-			<?php if ( ! empty( $email ) ) : ?><li><a href="mailto:<?php echo esc_url( $email ); ?>"><?php echo esc_html( $email ); ?></a></li><?php endif; ?>
-			<?php if ( ! empty( $phone ) ) : ?><li><a href="tel:<?php echo esc_url( $phone ); ?>"><?php echo esc_html( $phone ); ?></a></li><?php endif; ?>
+			<?php if ( ! empty( $email ) ) : ?><li><a href="mailto:<?php echo esc_html( $email ); ?>"><?php echo esc_html( $email ); ?></a></li><?php endif; ?>
+			<?php if ( ! empty( $phone ) ) : ?><li><a href="tel:<?php echo esc_html( $phone ); ?>"><?php echo esc_html( $phone ); ?></a></li><?php endif; ?>
 		</ul>
 	</div>
 </footer>
